@@ -88,7 +88,7 @@ Ejemplo:
 ```
 En el entorno Docker el host `sqlserver` corresponde al contenedor de SQL Server definido en `docker-compose`.
 
-#### Migraciones
+### Migraciones
 Este proyecto ya tiene las migraciones creadas y se ejecutarán automáticamente al levantar el proyecto
 
 ## Usuarios de Prueba
