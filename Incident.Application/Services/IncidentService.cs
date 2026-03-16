@@ -98,7 +98,8 @@ namespace Incident.Application.Services
                 Description = created.Description,
                 Severity = created.Severity.ToString(),
                 Status = created.Status.ToString(),
-                ServiceId = created.ServiceId
+                ServiceId = created.ServiceId,
+                CreatedAt = created.CreatedAt,
             };
         }
 
@@ -182,7 +183,8 @@ namespace Incident.Application.Services
                 Description = updated.Description,
                 Severity = updated.Severity.ToString(),
                 Status = updated.Status.ToString(),
-                ServiceId = updated.ServiceId
+                ServiceId = updated.ServiceId,
+                CreatedAt = incident.CreatedAt,
             }; ;
         }
     }
