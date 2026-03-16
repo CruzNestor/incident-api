@@ -78,13 +78,15 @@ Se eligió Clean Architecture para desacoplar el dominio de los detalles de infr
 - Dos bases de datos implican mayor complejidad operativa
 
 ## Configuración
-Asegúrese de tener las credenciales correctas en `ConnectionStrings`
+La conexión a la base de datos se configura mediante `ConnectionStrings` en `appsettings.json`.
 
+Ejemplo:
 ```bash
 "ConnectionStrings": {
   "DefaultConnection": "Server=sqlserver,1433;User Id=sa;Database=IncidentDb;Password=mypassword;TrustServerCertificate=True"
 },
 ```
+En el entorno Docker el host `sqlserver` corresponde al contenedor de SQL Server definido en `docker-compose`.
 
 #### Migraciones
 Este proyecto ya tiene las migraciones creadas y se ejecutarán automáticamente al levantar el proyecto
