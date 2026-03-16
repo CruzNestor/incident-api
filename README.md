@@ -1,5 +1,8 @@
 # Incident API
 
+- Frontend → https://github.com/CruzNestor/incident-web.git
+- Infrastructure → https://github.com/CruzNestor/incident-infra.git
+
 API REST para gestión de incidencias.
 
 ## Tecnologías
@@ -16,23 +19,38 @@ API REST para gestión de incidencias.
 
 El proyecto sigue Clean Architecture:
 
-#### Domain
-- Entidades del negocio
-- Enums y reglas básicas
-#### Application
-- Servicios
-- Interfaces
-- DTOs
-- Excepciones
-#### Infrastructure
-- Implementación de repositorios (ASP.NET Core Identity)
-- EF Core
-- MongoDB
-- Integraciones externas
-#### Api
-- Controladores
-- Configuraciones
-- DI
+```bash
+ ├── Incident.Api
+ │    ├── Controllers
+ │    ├── Configurations
+ │    └── Program.cs
+ │
+ ├── Incident.Application
+ │    ├── DTOs
+ │    ├── Interfaces
+ │    ├── Services
+ │    └── Exceptions
+ │
+ ├── Incident.Domain
+ │    ├── Entities
+ │    ├── Enums
+ │    └── Repositories
+ │
+ └── Incident.Infrastructure
+      ├── Persistence
+      │    ├── Relational
+      │    │    ├── Repositories
+      │    │    └── ApplicationDbContext.cs
+      │    │
+      │    └── Mongo
+      │         ├── Documents
+      │         └── Repositories
+      │
+      ├── ExternalServices
+      │    └── ServiceCatalog
+      │
+      └── Migrations
+```
 
 ## Decisiones de arquitectura (y tradeoffs)
 #### Clean Architecture
@@ -72,7 +90,7 @@ Asegúrese de tener las credenciales correctas en `ConnectionStrings`
 Este proyecto ya tiene las migraciones creadas y se ejecutarán automáticamente al levantar el proyecto
 
 ## Usuarios de Prueba
-El sistema crea usuarios automáticamente mediante seed. Es necesario iniciar sesión, ya que, las rutas estan protegidas.
+El sistema crea usuarios automáticamente mediante seed. Es necesario iniciar sesión, ya que, las rutas están protegidas.
 
 | Usuario           | Password     | 
 | :--------         | :-------     | 
